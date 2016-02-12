@@ -2,6 +2,7 @@ Feature: Login Page
   @login
   Scenario: Login Page -Incorrect or incomplete email address
     Given Open the Man Group site
+    #wrong or incomplete email
     And Input email address "Testing"
     Then Click "Login" button
     Then Warning message "Invalid Email Address" should be displayed
@@ -120,4 +121,8 @@ Scenario: Login Page - Forgot password link
     Given Open the Man Group site
     Then Input email address "Testing112123123@gmail.com"
     Then Enter password "0ChangeMe0!"
+    Then Enter pin "9876"
     Then Click "Login" button
+
+
+

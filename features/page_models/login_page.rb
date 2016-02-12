@@ -1,7 +1,7 @@
 class LoginPage
  def homepage
-  $driver.get "https://clarus-man-a2.wsodqa.com/Login"
- # $driver.get "https://clarus.man.com/Login"
+ $driver.get "https://clarus-man-a2.wsodqa.com/Login"
+  #$driver.get "https://clarus.man.com/Login"
 end
 
 def emailfield
