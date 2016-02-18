@@ -5,9 +5,7 @@ Before do
   $driver = Selenium::WebDriver.for(:firefox, :profile => profile)
   $dropdown = Selenium::WebDriver::Support::Select
   $driver.manage.window.maximize
-  #$driver.get $basicurl
-
-end
+ end
 
 AfterStep do
   $driver.manage.timeouts.implicit_wait = 6
@@ -39,5 +37,5 @@ After do |scenario|
     $driver.save_screenshot(screenshot_file)
     embed("#{screenshot_file}", 'image/png')
   end
-  #$driver.close
+  $driver.close
 end

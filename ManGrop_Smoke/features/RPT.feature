@@ -1,16 +1,15 @@
 
 Feature: Account
+
+  Background:
+    Given Open the Man Group site
+    Given Enter "Testing112123123@gmail.com" password "0ChangeMe0!$$" and pin "9876" and click "Login" button
 #1
   Scenario:  Reset profile settings
-    Given Open the Man Group site
-    Given Enter "Testing112123123@gmail.com" password "0ChangeMe0!" and pin "9876" and click "Login" button
     Then Click "Profile" icon
     Then Tap "Reset" button
-
 #2
   Scenario: Creating the Work Space - Open Create new Space dialog - Close dialog
-    Given Open the Man Group site
-    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
     Then Tap on "plus" button
     Then Verify "Create a New Space" overlay opens
     Then Tap "close" button on the "Create a new space" overlay
@@ -18,38 +17,45 @@ Feature: Account
 
 #3
   Scenario: Creating the Work Space - Create Space WITHOUT the name check the name
-    Given Open the Man Group site
-    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
     Then Tap on "plus" button
     Then Tap "Create Space" button on the "Create a new space" overlay
     Then "Name your space" tab should exists
     Then Just created "Name your space" tab should be active
-##4
-#  Scenario: Creating the Work Space - Create Space WITH the name check the name
-#    Given Open the Man Group site
-#    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
-#    Then Tap on "+" button
-#    Then Enter "Test Automation" workspace name
-#    Then Tap button "Create Space"
-#    Then Verify that "Test Automation" exists
-#    Then Verify that "Test Automation" is active
-#
-##5
-#  Scenario: Checking the Work Space - Duplicate  functionality
-#    Given Open the Man Group site
-#    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
-#    Then Move mouse to "Test Automation" ws and tap "Duplicate"
-#    Then Verify that "copy of Test Automation" exists
-#
-## WORK SPACE DUPLICATE-REMOVE-RENAME FUNCTIONS
-##6
-#  Scenario: Checking the Work Space - Rename functionality
-#    Given Open the Man Group site
-#    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
-#    Then Move mouse to "copy of Test Automation" ws and tap "Rename"
-#    Then Enter new name "Renamed WS" of workspace and press enter button
-#    Then Verify that "Renamed WS" exists
-#
+#4
+  Scenario: Creating the Work Space - Create Space WITH the name check the name
+    Then Tap on "plus" button
+    Then Enter "Test Automation" workspace name
+    Then Tap "Create Space" button on the "Create a new space" overlay
+    Then "Test Automation" tab should exists
+    ## WORK SPACE DUPLICATE-REMOVE-RENAME FUNCTIONS
+#5
+  Scenario: Checking the Work Space - Duplicate  functionality
+    Then Tap on "plus" button
+    Then Enter "Duplicate" workspace name
+    Then Tap "Create Space" button on the "Create a new space" overlay
+    Then Move mouse to "Duplicate"
+    Then Click "Duplicate" in menu
+    Then "copy of Duplicate" tab should exists
+
+
+#6
+  Scenario: Checking the Work Space - Rename functionality
+    Then Tap on "plus" button
+    Then Enter "Rename me" workspace name
+    Then Tap "Create Space" button on the "Create a new space" overlay
+    Then Move mouse to "Rename me"
+    Then Click "Rename" in menu
+    Then Enter new name "Renamed WS" of workspace and press enter button
+    Then "Renamed WS" tab should exists
+#7
+  Scenario: Checking the Work Space - Remove functionality
+    Then Tap on "plus" button
+    Then Enter "Remove me" workspace name
+    Then Tap "Create Space" button on the "Create a new space" overlay
+    Then Move mouse to "Remove me"
+    Then Click "Remove" in menu
+    Then WorkSpace "Remove me" should not be displayed
+##
 ##7
 #  Scenario: Checking the Work Space - Rename functionality
 #    Given Open the Man Group site

@@ -90,12 +90,12 @@ end
 Then /^List of disclaimers should be displayed on page:$/ do |disclaimerslist|
   login_page.disclaimers disclaimerslist
 end
-Given /^Enter "([^"]*)" password "([^"]*)" and pin "([^"]*)" and click "([^"]*)" button$/ do |emailadress, password, pin, button|
-  login_page.homepage
-  login_page.emailfield.send_keys emailadress
-  login_page.passwordfield.send_keys password
-  login_page.pinfield.send_keys pin
-  login_page.loginbutton button
-  sleep 15
-
-end
+# Given /^Enter "([^"]*)" password "([^"]*)" and pin "([^"]*)" and click "([^"]*)" button$/ do |emailadress, password, pin, button|
+#   login_page.homepage
+#   login_page.emailfield.send_keys emailadress
+#   login_page.passwordfield.send_keys password
+#   login_page.pinfield.send_keys pin
+#   login_page.loginbutton button
+#   sleep 15
+#
+# end
