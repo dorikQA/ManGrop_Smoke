@@ -12,6 +12,7 @@ Then /^Click "Profile" icon$/ do
 end
 Then (/^Tap "([^"]*)" button$/) do |button|
   risk_perfomance_page.reset_button(button).click
+  sleep 15
 
 end
 Then /^Tap on "plus" button$/ do
@@ -37,7 +38,11 @@ Then /^"([^"]*)" overlay should be closed$/ do |create_newspace_overlay|
 end
 
 Then /^"([^"]*)" tab should exists$/ do |workspace_name|
-  risk_perfomance_page.work_space_tab_name workspace_name
+  if risk_perfomance_page.work_space_tab_name(workspace_name).count > 0
+      puts "Passed'#{workspace_name}' exists"
+    else
+      fail "BUG! '#{workspace_name}' is not exist"
+  end
 
 end
 Then /^Just created "([^"]*)" tab should be active$/ do |workspace_name|
@@ -71,7 +76,10 @@ Then /^Enter new name "([^"]*)" of workspace and press enter button$/ do |new_ws
   risk_perfomance_page.renamefield.send_keys new_ws_name
   risk_perfomance_page.renamefield.send_keys :enter
 end
-Then /^WorkSpace "([^"]*)" should not be displayed$/ do |wsname|
-  risk_perfomance_page.work_space_tab_name
+Then /^WorkSpace "([^"]*)" should not be displayed$/ do |workspace_name|
+  sleep 4
+  if risk_perfomance_page.work_space_tab_name(workspace_name).count > 0
+   fail "Bug!!!'#{workspace_name}' exists"
+  end
 
 end

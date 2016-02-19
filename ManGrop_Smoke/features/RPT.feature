@@ -4,6 +4,8 @@ Feature: Account
   Background:
     Given Open the Man Group site
     Given Enter "Testing112123123@gmail.com" password "0ChangeMe0!$$" and pin "9876" and click "Login" button
+    Then Click "Profile" icon
+    Then Tap "Reset" button
 #1
   Scenario:  Reset profile settings
     Then Click "Profile" icon
@@ -55,22 +57,8 @@ Feature: Account
     Then Move mouse to "Remove me"
     Then Click "Remove" in menu
     Then WorkSpace "Remove me" should not be displayed
-##
-##7
-#  Scenario: Checking the Work Space - Rename functionality
-#    Given Open the Man Group site
-#    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
-#    Then Move mouse to "Renamed WS" ws and tap "Remove"
-#    Then Verify "Renamed WS" doesn't exist
-#  Scenario: My Profile- Checking that user can open and close My Profile overlay
-#    Given Open the Man Group site
-#    Given Enter "modtestinternalclientservice@gmail.com" password "Wsodtest1!" and pin "9876" and click "Login" button
-#    Then Click "Profile" icon
-#    Then Verify "My Profile" overlay opens
-#    Then Tap "close"
-#    Then Verify that "My Profile" overlay was closed
 
-#
+
 ##8
 #  Scenario: My Profile - Verify  that My Profile overlay contains Contact information, Change Password, Language selector, Preference
 

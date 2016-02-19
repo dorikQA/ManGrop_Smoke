@@ -29,11 +29,11 @@ class RiskPerfomancePage
 
   def work_space_tab_name workspace_name
     workspaces = $driver.find_elements(:xpath,"//a[@class = 'nav-tab' and contains(text(), '#{workspace_name}')]")
-    if workspaces.count > 0
-      puts "Passed'#{workspace_name}' exists"
-    else
-      raise "BUG! '#{workspace_name}' is not exist"
-    end
+    # if workspaces.count > 0
+    #   puts "Passed'#{workspace_name}' exists"
+    # else
+    #   raise "BUG! '#{workspace_name}' is not exist"
+    # end
   end
   def active_work_space_tab workspace_name
   wsactives = $driver.find_elements(:xpath, "//li[@class = 'active']/a[contains(@title,'#{workspace_name}')]")
