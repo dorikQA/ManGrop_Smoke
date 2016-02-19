@@ -81,5 +81,9 @@ Then /^WorkSpace "([^"]*)" should not be displayed$/ do |workspace_name|
   if risk_perfomance_page.work_space_tab_name(workspace_name).count > 0
    fail "Bug!!!'#{workspace_name}' exists"
   end
-
+end
+Then /^Verify "My Profile" overlay contains subsections:$/ do |subsection, name|
+  puts subsection
+  puts name
+  risk_perfomance_page.myprofile_menu_row
 end

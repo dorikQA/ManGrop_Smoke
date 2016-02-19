@@ -1,11 +1,11 @@
 
-Feature: Account
+Feature: Risk & Performance Page
 
   Background:
     Given Open the Man Group site
     Given Enter "Testing112123123@gmail.com" password "0ChangeMe0!$$" and pin "9876" and click "Login" button
-    Then Click "Profile" icon
-    Then Tap "Reset" button
+#    Then Click "Profile" icon
+#    Then Tap "Reset" button
 #1
   Scenario:  Reset profile settings
     Then Click "Profile" icon
@@ -29,7 +29,8 @@ Feature: Account
     Then Enter "Test Automation" workspace name
     Then Tap "Create Space" button on the "Create a new space" overlay
     Then "Test Automation" tab should exists
-    ## WORK SPACE DUPLICATE-REMOVE-RENAME FUNCTIONS
+
+   ## WORK SPACE DUPLICATE-REMOVE-RENAME FUNCTIONS
 #5
   Scenario: Checking the Work Space - Duplicate  functionality
     Then Tap on "plus" button
@@ -38,8 +39,6 @@ Feature: Account
     Then Move mouse to "Duplicate"
     Then Click "Duplicate" in menu
     Then "copy of Duplicate" tab should exists
-
-
 #6
   Scenario: Checking the Work Space - Rename functionality
     Then Tap on "plus" button
@@ -60,16 +59,14 @@ Feature: Account
 
 
 ##8
-#  Scenario: My Profile - Verify  that My Profile overlay contains Contact information, Change Password, Language selector, Preference
-
-
-#    Then Click "Profile" icon
-#    Then Verify "My Profile" overlay contains subsections:
-#      |subsections|
-#      |Contact Information |
-#      |Change Password     |
-#      |Language Selector   |
-#      |Preferences        |
+  Scenario: My Profile - Verify  that My Profile overlay contains Contact information, Change Password, Language selector, Preference
+    Then Click "Profile" icon
+    Then Verify "My Profile" overlay contains subsections:
+      |subsections|
+      |Contact Information |
+      |Change Password     |
+      |Language Selector   |
+      |Preferences        |
 # #9
 #  Scenario:  My Profile - Verify  subsections in Contact Information required subsections
 #    Then Click "Profile" icon

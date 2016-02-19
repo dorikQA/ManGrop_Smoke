@@ -8,5 +8,5 @@ def login_page
   LoginPage.new
 end
 def risk_perfomance_page
-  RiskPerfomancePage.new
+  RPTPage.new
 end

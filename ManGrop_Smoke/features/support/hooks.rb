@@ -38,6 +38,6 @@ After do |scenario|
   #   embed("#{screenshot_file}", 'image/png')
   #end
   end
-  $driver.close
+  #$driver.close
 
 end
